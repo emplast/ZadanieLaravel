@@ -10,14 +10,27 @@
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
-
                         <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+                            <label for="imie" class="col-md-4 col-form-label text-md-right">Imie:</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                <input id="imie" type="text" class="form-control @error('imie') is-invalid @enderror" name="imie" value="{{ old('imie') }}" required autocomplete="name" autofocus>
 
-                                @error('name')
+                                @error('imie')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="na" class="col-md-4 col-form-label text-md-right">Nazwisko</label>
+
+                            <div class="col-md-6">
+                                <input id="nazwisko" type="text" class="form-control @error('nazwisko') is-invalid @enderror" name="nazwisko" value="{{ old('nazwisko') }}" required autocomplete="nazwisko" autofocus>
+
+                                @error('nazwisko')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>

@@ -11,7 +11,7 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" ></script>
+    <script src="{{ asset('js/app.js') }}"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -25,9 +25,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
-                </a>
+
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                     aria-label="{{ __('Toggle navigation') }}">
@@ -93,116 +91,138 @@
     <div class="modal fade" id="modal-id">
         <div class="modal-dialog">
             <div class="modal-content">
-            <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    </div>
-                   
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+
                 <form action="{{route('add')}}" method="POST" role="form">
-                <div class="modal-body">
-                    <div class="form-group">
-                        <div class="row">
-                            <div class="col-sm-4">
-                                <label for="">Imie:</label>
-                            </div>
-                            <div class="col-sm-8">
-                                <input type="text" class="form-control" id="imie" name="imie" placeholder="Imie">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="row">
-                            <div class="col-sm-4">
-                                <label for="">Nazwisko:</label>
-                            </div>
-                            <div class="col-sm-8">
-                                <input type="text" class="form-control" id="nazwisko"  name="nazwisko" placeholder="Nazwisko">
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <label for="">Imie:</label>
+                                </div>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" id="imie" name="imie" placeholder="Imie">
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="row">
-                            <div class="col-sm-4">
-                                <label for="">Wiek:</label>
-                            </div>
-                            <div class="col-sm-8">
-                                <input type="text" class="form-control" id="wiek"  name="wiek" placeholder="Wiek">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="row">
-                            <div class="col-sm-4">
-                                <label for="">E-mail:</label>
-                            </div>
-                            <div class="col-sm-8">
-                                <input type="email" class="form-control" id="email" name="email" placeholder="E-mail">
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <label for="">Nazwisko:</label>
+                                </div>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" id="nazwisko" name="nazwisko"
+                                        placeholder="Nazwisko">
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="row">
-                            <div class="col-sm-4">
-                                <label for="">Płeć męszczyzna:</label>
-                            </div>
-                            <div class="col-sm-8">
-                                <input type="checkbox"  id="checkBox_1" checked="true" value="1">
-                                
-                                <input type="hidden" name="plec" id="plec" class="form-control">
-                                
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <label for="">Wiek:</label>
+                                </div>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" id="wiek" name="wiek" placeholder="Wiek">
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="row">
-                            <div class="col-sm-4">
-                                <label for="">Dodane:</label>
-                            </div>
-                            <div class="col-sm-8">
-                               <select class="form-control" id="dodane" name="dodano">
-                               <option value="2019" selected>2019</option>
-                               <option value="2020">2020</option>
-                               </select>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <label for="">E-mail:</label>
+                                </div>
+                                <div class="col-sm-8">
+                                    <input type="email" class="form-control" id="email" name="email"
+                                        placeholder="E-mail">
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="row">
-                            <div class="col-sm-4">
-                                <label for="">Komentarz:</label>
-                            </div>
-                            <div class="col-sm-8">
-                               <textarea name="komentarz" id="komentarz" cols="32" rows="5" placeholder="Komentarz"></textarea>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <label for="">Płeć:</label>
+                                </div>
+                                <div class="col-sm-8">
+                                    <label for="kobieta">Kobieta
+                                        <input type="checkbox" id="kobieta" value="1">
+                                    </label>
+                                    <label for="meszczyzna">Męszczyzna
+                                        <input type="checkbox" id="meszczyzna" value="0">
+                                    </label>
+
+                                    <input type="hidden" name="plec" id="plec">
+
+                                </div>
                             </div>
                         </div>
-                    </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <label for="">Dodane:</label>
+                                </div>
+                                <div class="col-sm-8">
+                                    <select class="form-control" id="dodane" name="dodano">
+                                        <option value="2019" selected>2019</option>
+                                        <option value="2020">2020</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <label for="">Komentarz:</label>
+                                </div>
+                                <div class="col-sm-8">
+                                    <textarea name="komentarz" id="komentarz" cols="32" rows="5"
+                                        placeholder="Komentarz"></textarea>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Anuluj</button>
                         <button type="submit" class="btn btn-primary">Dodaj dane</button>
                     </div>
                     @csrf
-                    
+
                     <input type="hidden" name="zaplata" id="zaplata" class="form-control" value="0">
-                    
-                    
+
+
+
                 </form>
             </div>
         </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script>
-$(function(){
-    $('#checkBox_1').on('change',function(){
-        if(document.getElementById('checkBox_1').checked){
-            $('#plec').val(1)
-        }else{
-            $('#plec').val(0);
-        }
-        
-        
+    <script>
+    $(function() {
+        $('#kobieta').prop('checked', true);
+        $('#plec').val(0);
+        $('#meszczyzna').on('change', function() {
+            if ($('#meszczyzna').prop('checked') == true) {
+                $('#kobieta').prop('checked', false);
+                $('#plec').val(1);
+
+
+            }
+            console.log($('#plec').val());
+
+        });
+        $('#kobieta').on('change', function() {
+            if ($('#kobieta').prop('checked') == true) {
+                $('#meszczyzna').prop('checked', false);
+                $('#plec').val(0);
+
+
+            }
+          
+
+        });
     });
-});
-</script>
+    </script>
 </body>
 
 </html>

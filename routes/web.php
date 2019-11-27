@@ -17,10 +17,12 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::get('/', 'DaneController@index');
 Route::get('/dane', 'DaneController@index');
 Route::get('/dane/person/{id}', 'DaneController@person')->name('person');
 Route::get('/dane/dodano_2019', 'DaneController@dodane_2019')->name('dodano_2019');
 Route::get('/dane/dodano_2020', 'DaneController@dodane_2020')->name('dodano_2020');
 Route::get('/dane/zaplacone', 'DaneController@zaplacone')->name('zaplacone');
 Route::post('/add','DaneController@add')->name('add');
-Route::post('/dane/ajax','DaneController@edit');
+Route::post('/dane/ajaxEdytuj','DaneController@edit');
+Route::post('/dane/ajaxUsun','DaneController@delete');

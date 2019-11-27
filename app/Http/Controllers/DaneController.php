@@ -54,8 +54,21 @@ class DaneController extends Controller
 
     public function edit(Request $request){
 
-      $data=['zaplata'=>$request->zaplata];
+      $data=['zaplata'=>$request->zaplata,
+             'imie'=>$request->imie,
+             'nazwisko'=>$request->nazwisko,
+             'email'=>$request->email,
+             'wiek'=>$request->wiek,
+             'plec'=>$request->plec,
+             'dodano'=>$request->dodano,
+             'komentarz'=>$request->komentarz];
       Person::where('id',$request->id)->update($data);
       echo $request->id;
+    }
+    public function delete(Request $request){
+
+      Person::where('id',$request->id)->delete();
+      echo $request->id;
+
     }
 }
